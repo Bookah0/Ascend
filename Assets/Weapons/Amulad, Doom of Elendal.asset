@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc11c9c2d6837c948a9cea3d9ecdc11e, type: 3}
+  m_Name: Amulad, Doom of Elendal
+  m_EditorClassIdentifier: 
+  type: 4
+  handed: 2
+  rarity: 2
+  throwable: 0
+  dualWield: 0
+  hasReach: 1
+  weight: 4
+  value: 40
+  baseActionCost: 4
+  dualWieldPenalty: 0
+  flavorText: Newborn legend says that King Kalvan crushed Elendal, the Voice of
+    Leaves and king of forests under the force of this warhammer. Countless wooden
+    chips flooded the ground of which Kalvan later fueled his fires of victory with.
+    In truth it was Lenna, Left hand of the King that was suited in the Kings golden
+    armor that dim night and it was she who fell the living tree. The King sitting
+    idle far away from any harm.
+  attributeRec:
+  - attribute: 0
+    value: 4
+  dualWieldRec: []
+  bleedsAt: 
+  damageTypes: 0000000007000000
+  attacks: []
+  effects: []

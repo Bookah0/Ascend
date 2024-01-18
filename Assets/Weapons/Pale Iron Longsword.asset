@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc11c9c2d6837c948a9cea3d9ecdc11e, type: 3}
+  m_Name: Pale Iron Longsword
+  m_EditorClassIdentifier: 
+  type: 7
+  handed: 2
+  rarity: 0
+  throwable: 0
+  dualWield: 0
+  hasReach: 0
+  weight: 3
+  value: 3
+  baseActionCost: 3
+  dualWieldPenalty: 0
+  flavorText: Pale iron, or "commoners iron" as its known by Pieniar weaponsmiths
+    is the affordable alternative to Pure and regular iron. It, just as Pure iron
+    isn't actual iron but metal the Pieniar discovered during the Vale Expansion
+    when deposits grew short. To the naked eye it has the appearance its pure counterpart
+    which, in the past had created large trade disputes throughout all of Delman
+    as commoners became rich from selling these dull swords.
+  attributeRec: []
+  dualWieldRec: []
+  bleedsAt: 04000000
+  damageTypes: 0200000001000000
+  attacks: []
+  effects: []

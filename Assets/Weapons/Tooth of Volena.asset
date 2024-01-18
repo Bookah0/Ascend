@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc11c9c2d6837c948a9cea3d9ecdc11e, type: 3}
+  m_Name: Tooth of Volena
+  m_EditorClassIdentifier: 
+  type: 3
+  handed: 0
+  rarity: 2
+  throwable: 0
+  dualWield: 1
+  hasReach: 0
+  weight: 1
+  value: 35
+  baseActionCost: 2
+  dualWieldPenalty: 0
+  flavorText: With his party slaughtered, he fled. Mienar, Idroian slayer of Ydelvra
+    brought nothing home but a single tooth, not the head that was ordered of him.
+    He voued to slay the beast with the very thing that was coated with the blood
+    of his comrades. However, that day would never come. As Volenas whispers grew
+    louder and louder Mienars mind broke.
+  toImplement: 
+  attributeRec:
+  - attribute: 0
+    value: 2
+  - attribute: 2
+    value: 4
+  dualWieldRec: []
+  bleedsAt: 0300000003000000
+  damageTypes: 02000000
+  attacks: []
+  effects: []

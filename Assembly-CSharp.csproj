@@ -56,25 +56,73 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Abilities\Ability.cs" />
-    <Compile Include="Assets\Scripts\Abilities\AbilityHolder.cs" />
-    <Compile Include="Assets\Scripts\Abilities\Aim.cs" />
-    <Compile Include="Assets\Scripts\Abilities\Arcane Chop.cs" />
-    <Compile Include="Assets\Scripts\Abilities\Arcane Pull.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player.cs" />
-    <Compile Include="Assets\Scripts\Characters\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Effects\TheSapphireEye.cs" />
+    <Compile Include="Assets\Scripts\Items\EquipmentData.cs" />
+    <Compile Include="Assets\Scripts\Characters\EnemyData.cs" />
+    <Compile Include="Assets\Scripts\Effects\AoeRestriction.cs" />
+    <Compile Include="Assets\Scripts\Battlefield\Battlefield.cs" />
+    <Compile Include="Assets\Scripts\Structs.cs" />
+    <Compile Include="Assets\Scripts\Battlefield\Tokens\HighGrass.cs" />
+    <Compile Include="Assets\Scripts\Characters\CharacterData.cs" />
     <Compile Include="Assets\Scripts\Proficiencies\Proficiency.cs" />
-    <Compile Include="Assets\Scripts\Characters\EquippedItems.cs" />
-    <Compile Include="Assets\Scripts\Characters\Combat\Attack.cs" />
-    <Compile Include="Assets\Scripts\Items\Equipment\Weapon.cs" />
-    <Compile Include="Assets\Scripts\Battlefield\Tile.cs" />
     <Compile Include="Assets\Scripts\Characters\Combat\Checks.cs" />
-    <Compile Include="Assets\Scripts\Characters\Combat\Movement.cs" />
-    <Compile Include="Assets\Scripts\Items\Equipment\Weapons\CommonerDirk.cs" />
+    <Compile Include="Assets\Scripts\Items\Equipment.cs" />
+    <Compile Include="Assets\Scripts\Effects\HelmOfSolace.cs" />
+    <Compile Include="Assets\Scripts\Effects\ValnaiCowl.cs" />
+    <Compile Include="Assets\Scripts\Characters\Combat\AttackData.cs" />
+    <Compile Include="Assets\Scripts\Abilities\ArcaneChop.cs" />
+    <Compile Include="Assets\Scripts\Effects\DestroyBush.cs" />
+    <Compile Include="Assets\Scripts\Effects\Effect.cs" />
     <Compile Include="Assets\Scripts\Characters\Stats.cs" />
-    <Compile Include="Assets\Scripts\Items\Equipment\BasicAttack.cs" />
-    <Compile Include="Assets\Scripts\Items\Item.cs" />
-    <Compile Include="Assets\Scripts\Effect.cs" />
+    <Compile Include="Assets\Scripts\Battlefield\Tile.cs" />
+    <Compile Include="Assets\Scripts\Battlefield\Tokens\Tree.cs" />
+    <Compile Include="Assets\Scripts\Effects\ChangeInAmbushChance.cs" />
+    <Compile Include="Assets\Scripts\Characters\Combat\Buff.cs" />
+    <Compile Include="Assets\Scripts\Items\WeaponData.cs" />
+    <Compile Include="Assets\Scripts\Characters\Character.cs" />
+    <Compile Include="Assets\Scripts\Enums.cs" />
+    <Compile Include="Assets\Scripts\Characters\Combat\Movement.cs" />
+    <Compile Include="Assets\Scripts\Battlefield\Token.cs" />
+    <Compile Include="Assets\Scripts\Abilities\Aim.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player.cs" />
+    <Compile Include="Assets\Scripts\Battlefield\BattlefieldGenerator.cs" />
+    <Compile Include="Assets\Scripts\Effects\EquipmentEffect.cs" />
+    <Compile Include="Assets\Scripts\CombatManager.cs" />
+    <Compile Include="Assets\Scripts\Battlefield\BattlefieldSpawner.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Abilities\ArcanePull.cs" />
+    <Compile Include="Assets\Scripts\Battlefield\Tokens\Gas.cs" />
+    <Compile Include="Assets\Scripts\Characters\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Abilities\Ability.cs" />
+    <Compile Include="Assets\Scripts\Characters\PlayerData.cs" />
+    <Compile Include="Assets\Scripts\Items\ItemData.cs" />
+    <Compile Include="Assets\Scripts\Characters\Combat\IMovable.cs" />
+    <Compile Include="Assets\Scripts\Abilities\AbilityData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Shaders\OutlineShader.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -331,18 +379,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.16f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.16f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Android.Types">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.16f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Android.Gradle">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.16f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.16f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

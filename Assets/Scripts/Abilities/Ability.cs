@@ -2,43 +2,97 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ability : MonoBehaviour
+public abstract class Ability : MonoBehaviour
 {
-    public new string name;
-    public float cooldownTime;
-    public float activeTime;
-    public float range;
-    public List<string> proficiencies;
-    public float actionCost;
-    public bool firstTurnActivate = false;
-    public List<Dice> damageDice;
-    public float damageMod;
-    public DamageType damageType;
-    public GameObject target;
+    public AbilityData data;
+    public List<Effect> effects;
+    private int curCooldown;
 
-    public enum DamageType
+    public void Initialize(string abilityDataName)
     {
-        pierce
-    }
+        curCooldown = 0;
+        var abilityDataResourcePath = "Abilities/" + abilityDataName;
+        AbilityData abilityData = Resources.Load<AbilityData>(abilityDataResourcePath);
 
-    public enum Dice
-    {
-        D6
-    }
-
-    public virtual void Activate(GameObject parent) { }
-
-    public void Learn(GameObject parent, float str, float agil, float ment)
-    {
-        Stats stats = parent.GetComponent<Stats>();
-        Player player = parent.GetComponent<Player>();
-        if (stats.mental >= ment && stats.strength >= str && stats.agility >= agil)
+        if (abilityData != null)
         {
-            player.LearnAbility(this);
+            data = abilityData;
+        }
+        else
+        {
+            Debug.LogError("AbilityData not found. Make sure the path is correct.");
         }
     }
+
+    public virtual void Activate(List<GameObject> targets) { }
+
+    public void Learn(GameObject player, float str, float agil, float ment)
+    {
+        Stats stats = player.GetComponent<Stats>();
+        if (stats.GetAttribute(Enums.Attribute.Mental) >= ment && stats.GetAttribute(Enums.Attribute.Physical) >= str && stats.GetAttribute(Enums.Attribute.Agility) >= agil)
+        {
+            player.GetComponent<Player>().LearnAbility(this);
+        }
+        else
+        {
+            Debug.Log("Doesn't meet attribute requirments");
+        }
+    }
+
+/*    public List<GameObject> GetTargetTiles()
+    {
+        List<GameObject> tiles = new() { };
+        Tile tileScript = parent.GetComponent<Player>().GetComponent<Tile>();
+        switch (targeting)
+        {
+            case Targeting.single:
+                return (tileScript.GetTile());
+            case Targeting.aoe:
+                return (tileScript.TilesInAoe(range));
+            case Targeting.cone:
+                return (tileScript.GetTilesInCone(width, range));
+            case Targeting.self:
+                return (new List<GameObject> { parent });
+            case Targeting.global:
+                return (tileScript.GetTilesOnBattlefield());
+        }
+    }
+*/
     public virtual void Learn(GameObject parent) { }
 
+    public void RestoreDefaults()
+    {
+        //firstTurnActivate = false;
+    }
 
-    public void RestoreDefults() { }
+    public void ChangeCooldown(int val)
+    {
+        curCooldown += val;
+    }
+
+    public bool IsOnCooldown()
+    {
+        return curCooldown <= 0;
+    }
+
+    /*void Update(){
+    switch (state){
+        case (AbilityState.active):
+            if(activeTime > 0){
+                activeTime -= Time.deltaTime;
+            } else{
+                state = AbilityState.cooldown;
+                cooldownTime = ability.cooldownTime;
+            }
+            break;
+        case (AbilityState.cooldown):
+            if (cooldownTime > 0){
+                cooldownTime -= Time.deltaTime;
+            } else{
+                state = AbilityState.ready;
+            }
+            break;
+    }
+}*/
+
 }

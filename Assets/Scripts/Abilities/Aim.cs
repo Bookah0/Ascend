@@ -4,49 +4,51 @@ using UnityEngine;
 
 public class Aim : Ability{
     
-    
     public override void Learn(GameObject parent)
     {
-        base.Learn(parent, 0, 2, 1);
+        Learn(parent, 0, 2, 1);
     }
 
-    public override void Activate(GameObject parent)
+    public override void Activate(List<GameObject> targets)
     {
-        Player player = parent.GetComponent<Player>();
-        Stats stats = parent.GetComponent<Stats>();
-        EquippedItems equippedItems = parent.GetComponent<EquippedItems>();
-        Weapon mainHand = equippedItems.mainHand.GetComponent<Weapon>();
+        AttackData attackData = new AttackData();
+        Player player = gameObject.GetComponent<Player>();
+        Stats stats = gameObject.GetComponent<Stats>();
+        WeaponData mainHand = gameObject.GetComponent<Inventory>().GetEquippedWeapon(WeaponData.Handed.mainHanded, 0);
 
-        RestoreDefults();
+        RestoreDefaults();
 
-        if (mainHand.type == Weapon.WeaponType.bow)
+        if (mainHand.type == WeaponData.WeaponType.bow)
         {
-            Attack attack = parent.GetComponent<Attack>();
-            attack.target = this.target;
-            attack.graceConversion += 3;
-            attack.dodgeChance = -1;
-            attack.CalculateHit();
+            attackData.graceConversion += 3;
+            attackData.dodgeChance = -1;
+            attackData.CalculateHit();
             if (player.HasProficiency("Archery"))
             {
-                attack.critChance += 3;
+                attackData.critChance += 3;
             }
-            if (attack.isMiss)
+            if (attackData.isMiss)
             {
-                cooldownTime -= 1;
+                ChangeCooldown(-1);
                 if (player.HasProficiency("Hand - eye coordination"))
                 {
-                    attack.isMiss = false;
+                    attackData.isMiss = false;
                 }
-            } if (attack.isCrit){
-                cooldownTime -= 1;
             }
-            attack.DealDamage(target);
-            cooldownTime += 2;
-            stats.actionPoints -= mainHand.baseActionCost;
-
-        } else
+            if (!attackData.isMiss)
+            {
+                ChangeCooldown(2);
+                if (attackData.isCrit)
+                {
+                    ChangeCooldown(-1);
+                }
+                stats.actionPoints -= mainHand.baseActionCost;
+                attackData.DealDamage(1, 2, Enums.Damage.Pierce);
+            }
+        } 
+        else
         {
-            print("not wielding a bow");
+            Debug.Log("not wielding a bow");
         }
     }
 }

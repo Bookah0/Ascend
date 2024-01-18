@@ -8,12 +8,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Tiles
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Tile Token Object
+  - Player
+  - Enemy
   - 
   - 
   - 
